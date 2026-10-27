@@ -1,0 +1,120 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="theme-color" content="#f7f4ed" />
+  <meta name="description" content="EchoVault is a private, local-first archive for the stories worth keeping." />
+  <title>EchoVault — Keep the stories that matter</title>
+  <link rel="stylesheet" href="/static/styles.css" />
+</head>
+<body>
+  <div class="app-shell">
+    <aside class="sidebar" id="sidebar">
+      <a class="brand" href="#top" aria-label="EchoVault home">
+        <span class="brand-mark"><svg viewBox="0 0 40 40" aria-hidden="true"><path d="M20 4.5c1.7 6.9 5.1 10.3 12 12-6.9 1.7-10.3 5.1-12 12-1.7-6.9-5.1-10.3-12-12 6.9-1.7 10.3-5.1 12-12Z"/><circle cx="20" cy="19" r="3.2"/></svg></span>
+        <span class="brand-type">echo<span>vault</span><small>YOUR PRIVATE MEMORY ARCHIVE</small></span>
+      </a>
+
+      <div class="sidebar-label">YOUR SPACE</div>
+      <nav class="side-nav" aria-label="Main navigation">
+        <button class="nav-item active" data-nav="archive" type="button"><span class="nav-icon"><svg viewBox="0 0 24 24"><rect x="4" y="5" width="16" height="15" rx="2"/><path d="M8 5V3h8v2M8 10h8M8 14h5"/></svg></span><span>Memory archive</span><span class="nav-count" id="nav-count">0</span></button>
+        <button class="nav-item" data-action="create" type="button"><span class="nav-icon"><svg viewBox="0 0 24 24"><path d="M12 5v14M5 12h14"/></svg></span><span>Preserve a memory</span></button>
+        <button class="nav-item" data-action="privacy" type="button"><span class="nav-icon"><svg viewBox="0 0 24 24"><rect x="5" y="10" width="14" height="10" rx="2"/><path d="M8 10V7a4 4 0 0 1 8 0v3M12 14v2"/></svg></span><span>Privacy & storage</span></button>
+      </nav>
+
+      <div class="sidebar-bottom">
+        <div class="privacy-card">
+          <span class="privacy-icon"><svg viewBox="0 0 24 24"><path d="M12 3 19 6v5c0 5-3 8-7 10-4-2-7-5-7-10V6l7-3Z"/><path d="m9 12 2 2 4-4"/></svg></span>
+          <div><strong>Your archive stays local.</strong><p>No cloud database. OpenRouter receives transcript text for AI summaries.</p></div>
+          <span class="privacy-check">✓</span>
+        </div>
+        <div class="sidebar-foot"><span class="tiny-orb"></span><span>LOCAL ARCHIVE · OPEN AI</span><span class="version">v1.0</span></div>
+      </div>
+    </aside>
+
+    <main class="main-content" id="top">
+      <header class="topbar">
+        <button id="mobile-menu" class="icon-button mobile-menu" aria-label="Open menu" type="button"><svg viewBox="0 0 24 24"><path d="M4 7h16M4 12h16M4 17h16"/></svg></button>
+        <div class="breadcrumb"><span>YOUR SPACE</span><span class="crumb-slash">/</span><strong>Memory archive</strong></div>
+        <div class="topbar-right">
+          <div class="connection-pill" id="connection-pill"><span class="status-dot"></span><span id="connection-text">Checking AI setup</span></div>
+          <button id="test-ai-button" class="test-ai-button" type="button">Test AI</button>
+          <button class="avatar-button" id="about-button" aria-label="About EchoVault" title="About EchoVault" type="button">E</button>
+        </div>
+      </header>
+
+      <div class="page-wrap">
+        <section class="welcome-row">
+          <div>
+            <div class="eyebrow"><span class="eyebrow-line"></span> A PLACE FOR WHAT MATTERS</div>
+            <h1>Some stories deserve<br class="desktop-break" /> to <em>stay.</em></h1>
+            <p class="welcome-copy">A quiet home for the voices, moments, and little details you never want to lose. Your archive and audio stay local; OpenRouter helps turn transcript text into searchable memories.</p>
+            <div class="welcome-actions"><button class="button button-primary" data-action="create" type="button"><svg viewBox="0 0 24 24"><path d="M12 5v14M5 12h14"/></svg> Preserve a memory</button><button class="text-button" id="how-it-works" type="button">How it works <span>↗</span></button></div>
+          </div>
+          <div class="hero-art" aria-hidden="true">
+            <div class="hero-orbit orbit-one"></div><div class="hero-orbit orbit-two"></div>
+            <div class="hero-sun"></div>
+            <div class="hero-flower flower-one"><i></i><i></i><i></i><i></i><i></i><b></b></div>
+            <div class="hero-flower flower-two"><i></i><i></i><i></i><i></i><i></i><b></b></div>
+            <div class="hero-stem stem-one"></div><div class="hero-stem stem-two"></div>
+            <div class="hero-note note-one"><span>✳</span> memories, held gently</div>
+            <div class="hero-note note-two"><span>◌</span> local archive · cloud AI</div>
+            <div class="hero-art-caption">THE PAST IS NOT LOST<br /><small>WHEN WE MAKE ROOM FOR IT.</small></div>
+          </div>
+        </section>
+
+        <section class="stats-grid" aria-label="Archive statistics">
+          <article class="stat-card stat-main"><div class="stat-top"><span class="stat-label">STORIES PRESERVED</span><span class="stat-icon terracotta"><svg viewBox="0 0 24 24"><path d="M5 4.5h10l4 4V20H5z"/><path d="M15 4.5V9h4M8 13h8M8 16h6"/></svg></span></div><div class="stat-value" id="stat-memories">0</div><div class="stat-foot"><span class="stat-dot"></span>Every story starts somewhere</div></article>
+          <article class="stat-card"><div class="stat-top"><span class="stat-label">WORDS KEPT</span><span class="stat-icon sage"><svg viewBox="0 0 24 24"><path d="M4 6h16M4 10h11M4 14h16M4 18h9"/></svg></span></div><div class="stat-value" id="stat-words">0</div><div class="stat-foot">Words from your transcripts</div></article>
+          <article class="stat-card"><div class="stat-top"><span class="stat-label">VOICE RECORDINGS</span><span class="stat-icon amber"><svg viewBox="0 0 24 24"><rect x="9" y="3" width="6" height="12" rx="3"/><path d="M5 11a7 7 0 0 0 14 0M12 18v3M9 21h6"/></svg></span></div><div class="stat-value" id="stat-audio">0</div><div class="stat-foot">Original audio stays with you</div></article>
+          <article class="stat-card"><div class="stat-top"><span class="stat-label">ARCHIVE HEALTH</span><span class="stat-icon plum"><svg viewBox="0 0 24 24"><path d="M12 3 19 6v5c0 5-3 8-7 10-4-2-7-5-7-10V6l7-3Z"/><path d="m9 12 2 2 4-4"/></svg></span></div><div class="stat-value stat-word" id="stat-health">Private</div><div class="stat-foot"><span class="health-dot"></span> Local storage active</div></article>
+        </section>
+
+        <section class="archive-section" id="archive">
+          <div class="section-heading"><div><div class="eyebrow eyebrow-small">THE COLLECTION</div><h2>Your memory shelf <span class="heading-count" id="heading-count">0</span></h2><p class="section-description">Each card holds a story, just as it was told.</p></div><button class="button button-outline" data-action="create" type="button"><svg viewBox="0 0 24 24"><path d="M12 5v14M5 12h14"/></svg> Add story</button></div>
+          <div class="archive-toolbar"><div class="search-wrap"><svg viewBox="0 0 24 24"><circle cx="10.8" cy="10.8" r="6.5"/><path d="m16 16 4 4"/></svg><input type="search" id="search-input" placeholder="Search memories, people, places..." aria-label="Search memories" /><kbd>⌘ K</kbd></div><div class="filter-group"><span class="filter-label">SHOW</span><button class="filter-button selected" data-filter="all" type="button">All stories</button><button class="filter-button" data-filter="audio" type="button">With audio</button></div></div>
+          <div id="memory-grid" class="memory-grid" aria-live="polite"></div>
+          <div id="empty-state" class="empty-state" hidden><div class="empty-illustration"><span class="empty-flower">✳</span><span class="empty-ring ring-a"></span><span class="empty-ring ring-b"></span></div><div class="eyebrow eyebrow-small">A NEW CHAPTER</div><h3>Your shelf is waiting.</h3><p>Start with a voice note, a conversation transcript, or a few paragraphs you want to keep. EchoVault will help you make it easier to find again.</p><button class="button button-primary" data-action="create" type="button"><svg viewBox="0 0 24 24"><path d="M12 5v14M5 12h14"/></svg> Preserve your first memory</button><button class="sample-button" id="sample-button" type="button">Try a fictional sample <span>↗</span></button></div>
+          <div id="no-results" class="no-results" hidden><span class="no-results-mark">⌕</span><strong>No matching memories</strong><p>Try another word, or clear the search.</p><button id="clear-search" class="text-button" type="button">Clear search</button></div>
+        </section>
+
+        <footer class="page-footer"><div class="footer-brand"><span class="footer-mark">✳</span><span>echo<span>vault</span></span></div><p>Built to hold what matters. <span>Archive is local; transcript text goes to OpenRouter for AI summaries.</span></p><button id="footer-privacy" class="footer-link" type="button">Privacy notes ↗</button></footer>
+      </div>
+    </main>
+  </div>
+
+  <div class="modal-backdrop" id="modal-backdrop" hidden></div>
+  <section class="modal" id="composer-modal" role="dialog" aria-modal="true" aria-labelledby="composer-title" hidden>
+    <div class="modal-header"><div><div class="eyebrow eyebrow-small">PRESERVE SOMETHING REAL</div><h2 id="composer-title">Give a story a place to live.</h2><p>Bring in a recording or paste a transcript. The archive stays on this device.</p></div><button class="modal-close" data-close-modal type="button" aria-label="Close">×</button></div>
+    <div class="composer-tabs" role="tablist"><button class="composer-tab active" data-mode="audio" role="tab" aria-selected="true" type="button"><svg viewBox="0 0 24 24"><rect x="9" y="3" width="6" height="12" rx="3"/><path d="M5 11a7 7 0 0 0 14 0M12 18v3"/></svg> Import audio</button><button class="composer-tab" data-mode="text" role="tab" aria-selected="false" type="button"><svg viewBox="0 0 24 24"><path d="M5 4.5h14V20H5zM8 9h8M8 13h8M8 17h5"/></svg> Paste transcript</button></div>
+    <form id="memory-form">
+      <label class="form-label" for="memory-title">STORY TITLE</label><input class="form-input" id="memory-title" name="title" maxlength="120" placeholder="e.g. The house with the orange gate" required />
+      <div class="mode-panel" id="audio-panel">
+        <label class="form-label">AUDIO RECORDING <span class="optional-label">OPTIONAL UNTIL SAVED</span></label>
+        <label class="dropzone" id="dropzone" for="audio-file"><input type="file" id="audio-file" accept="audio/*,.mp4,.webm" hidden /><span class="upload-symbol"><svg viewBox="0 0 24 24"><path d="M12 16V4M7 9l5-5 5 5M4 16v4h16v-4"/></svg></span><strong id="dropzone-title">Choose a recording to transcribe</strong><span id="dropzone-subtitle">WAV, MP3, M4A, OGG or FLAC · up to 100 MB</span><span class="dropzone-browse">Browse files</span></label>
+        <div class="audio-selected" id="audio-selected" hidden><span class="file-audio-icon"><svg viewBox="0 0 24 24"><rect x="9" y="3" width="6" height="12" rx="3"/><path d="M5 11a7 7 0 0 0 14 0"/></svg></span><div><strong id="selected-filename">recording.wav</strong><small id="selected-filesize">Audio file selected</small></div><button id="remove-audio" type="button" class="remove-file" aria-label="Remove selected file">×</button></div>
+        <div class="transcribe-row"><div><strong>Local transcription</strong><span>Uses Whisper on this machine. First run may need a model download.</span></div><button class="button button-soft" id="transcribe-button" type="button" disabled><svg viewBox="0 0 24 24"><path d="M12 3v18M8 7l4-4 4 4M5 13v6h14v-6"/></svg> Transcribe audio</button></div>
+      </div>
+      <div class="mode-panel" id="text-panel" hidden><label class="form-label" for="memory-transcript">TRANSCRIPT OR STORY TEXT</label><textarea class="form-textarea" id="memory-transcript" rows="8" placeholder="Paste the words you want to keep… You can also type a story from memory."></textarea><div class="input-note"><span class="note-icon">i</span> AI summaries work best with the original wording. You can edit the transcript before saving.</div></div>
+      <div class="transcript-panel" id="transcript-panel" hidden><div class="transcript-head"><label class="form-label" for="transcript-review">REVIEW TRANSCRIPT</label><span class="editable-tag">EDITABLE</span></div><textarea class="form-textarea" id="transcript-review" rows="7" placeholder="Your transcript will appear here…"></textarea><div class="transcript-meta" id="transcript-meta"></div></div>
+      <div class="privacy-inline"><svg viewBox="0 0 24 24"><rect x="5" y="10" width="14" height="10" rx="2"/><path d="M8 10V7a4 4 0 0 1 8 0v3"/></svg><span id="privacy-inline-copy"><strong>Local archive, cloud AI.</strong> Audio transcription and archive storage stay local, but transcript text is sent to OpenRouter for summarization.</span></div>
+      <div class="form-error" id="form-error" role="alert" hidden></div>
+      <div class="modal-actions"><button class="button button-quiet" data-close-modal type="button">Cancel</button><button class="button button-primary" id="save-memory" type="submit"><svg viewBox="0 0 24 24"><path d="M5 4h12l2 2v14H5zM8 4v6h8V4M8 20v-6h8v6"/></svg> Save to my archive</button></div>
+    </form>
+  </section>
+
+  <section class="modal detail-modal" id="detail-modal" role="dialog" aria-modal="true" aria-labelledby="detail-title" hidden>
+    <div class="detail-topbar"><span class="detail-kicker"><span class="tiny-orb"></span> PRESERVED MEMORY</span><button class="modal-close" data-close-modal type="button" aria-label="Close">×</button></div>
+    <div id="detail-content"></div>
+  </section>
+
+  <section class="modal info-modal" id="info-modal" role="dialog" aria-modal="true" aria-labelledby="info-title" hidden>
+    <div class="modal-header"><div><div class="eyebrow eyebrow-small" id="info-eyebrow">A NOTE ON PRIVACY</div><h2 id="info-title">Your memories stay close.</h2></div><button class="modal-close" data-close-modal type="button" aria-label="Close">×</button></div>
+    <div id="info-content" class="info-content"></div><div class="modal-actions"><button class="button button-primary" data-close-modal type="button">Got it</button></div>
+  </section>
+
+  <div class="toast-region" id="toast-region" aria-live="polite" aria-atomic="true"></div>
+  <script src="/static/app.js" defer></script>
+</body>
+</html>
